@@ -8,6 +8,10 @@ import Modal from './Modal/Modal';
 import Aux from './hoc/Auxilliary';
 import Post from './Posts/Post/Post';
 import {Button,Input} from  '@material-ui/core';
+import PostUpload from './PostUpload/PostUpload';
+
+
+
 function App() {
     
     const[posts,setPosts]=useState([]);
@@ -40,7 +44,7 @@ useEffect(()=>{
 
 useEffect(()=>{
 
-  db.collection('posts').onSnapshot(snapshot=>{
+  db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot=>{
 
     console.log(snapshot.docs);
     setPosts(snapshot.docs.map(doc =>(
@@ -54,7 +58,7 @@ useEffect(()=>{
 
 },[]);
 
-
+ 
 
 const signUp=(event)=>{
   event.preventDefault();
@@ -176,6 +180,13 @@ const signIn=(event)=>{
               src={image}
                alt=""/>
        </div>
+
+       { (user?.displayName)?
+       <PostUpload username={user.displayName}/>:
+       <h3>Sorry you need to login to Upload</h3>
+       }
+
+
        <h3>Hello let's build an instagram clone app with great enthusiasm.</h3>
      
      {user?<Button onClick={()=> auth.signOut()}>Log Out</Button> 
