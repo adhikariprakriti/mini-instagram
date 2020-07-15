@@ -179,6 +179,16 @@ const signIn=(event)=>{
               className="app__headerImage"
               src={image}
                alt=""/>
+
+      {user?<Button onClick={()=> auth.signOut()}>Log Out</Button> 
+         : (
+           <div className="app__loginContainer">
+         <Button onClick={()=>setShow(true)}>Sign Up</Button>
+         <Button onClick={()=>setOpenSignIn(true)}>Sign In</Button>
+         </div>
+         ) }
+     
+     
        </div>
 
        { (user?.displayName)?
@@ -187,15 +197,6 @@ const signIn=(event)=>{
        }
 
 
-       <h3>Hello let's build an instagram clone app with great enthusiasm.</h3>
-     
-     {user?<Button onClick={()=> auth.signOut()}>Log Out</Button> 
-         : (
-           <div className="app__loginContainer">
-         <Button onClick={()=>setShow(true)}>Sign Up</Button>
-         <Button onClick={()=>setOpenSignIn(true)}>Sign In</Button>
-         </div>
-         ) }
      
       
       
@@ -206,6 +207,9 @@ const signIn=(event)=>{
          )) 
        }
 
+
+
+     
 
          {/* Header */}
 

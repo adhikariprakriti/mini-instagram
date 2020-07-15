@@ -13,7 +13,7 @@
                  alt=""/>
        {/* image */}
        {/*username + caption */}
-          <h4 className="post__text"> <strong>{props.username}</strong>{props.caption}</h4>
+          <h4 className="post__text"> <strong>{props.username}</strong>    {props.caption}</h4>
      </div>
    );
  }
