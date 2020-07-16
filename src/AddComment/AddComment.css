@@ -1,0 +1,31 @@
+.comment__text{
+    font-weight: normal;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    
+}
+
+.comment__form{
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+   
+}
+
+.comment__input{
+   flex:1;
+   border: none;
+   border-top: 1px solid lightgray;
+    padding: 10px;
+
+}
+
+.comment__button{
+    flex:0;
+    border: none;
+    border-top: 1px solid lightgray;
+    color: #6092d4;
+
+}
+

@@ -1,5 +1,6 @@
 *{
   margin: 0px;
+  box-sizing: border-box;
 }
 
 
@@ -9,6 +10,7 @@
 
 .app__header{
   object-fit: contain;
+  position: sticky;
   background-color: white; 
   padding: 20px;
   border-bottom: 1.4px solid lightgray;

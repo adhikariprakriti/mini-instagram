@@ -46,7 +46,7 @@ useEffect(()=>{
 
   db.collection('posts').orderBy('timestamp','desc').onSnapshot(snapshot=>{
 
-    console.log(snapshot.docs);
+   // console.log(snapshot.docs);
     setPosts(snapshot.docs.map(doc =>(
       {
         id: doc.id,
@@ -191,7 +191,7 @@ const signIn=(event)=>{
      
        </div>
 
-       { (user?.displayName)?
+       {  user?.displayName ?
        <PostUpload username={user.displayName}/>:
        <h3>Sorry you need to login to Upload</h3>
        }
@@ -203,7 +203,12 @@ const signIn=(event)=>{
       
         {
          posts.map(({id,post})=>(
-           <Post key={id} username={post.username } image={post.image} caption={post.caption}/>
+           <Post key={id} 
+                 postId={id} 
+                 user={user?.displayName}
+                 username={post.username } 
+                 image={post.image} 
+                 caption={post.caption}/>
          )) 
        }
 
